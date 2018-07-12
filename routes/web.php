@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//company
+Route::get('/companies', 'CompaniesController@index')->name('company');
+Route::get('/company/create', 'CompaniesController@create')->name('company.create');
+Route::get('/company/save', 'CompaniesController@store')->name('company.store');
