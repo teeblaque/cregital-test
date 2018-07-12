@@ -31,8 +31,8 @@ class CompaniesController extends Controller
             'logo' => 'required|image|mimes:jpeg,bmp,png,jpg'
         ));
 
-        $compa = new Company()
-        {
+        $compa = new Company();
+
             $compa->name = $request->name;
             $compa->email = $request->email;
 
@@ -46,6 +46,5 @@ class CompaniesController extends Controller
             }
 
             $compa->save();
-        }
     }
 }
