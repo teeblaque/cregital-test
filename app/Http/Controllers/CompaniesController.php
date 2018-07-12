@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
 
 class CompaniesController extends Controller
 {
@@ -42,7 +44,7 @@ class CompaniesController extends Controller
                 $location = 'images/'.$fileName;
                 Image::make($image)->insert('images/newmerkov.png')->save($location);
 
-                $compa->default_image = $fileName;
+                $compa->logo = $fileName;
             }
 
             $compa->save();
